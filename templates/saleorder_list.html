@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Order List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sale Order List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Sale Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in sale_orders %}
+                <tr>
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.total_price }}</td>
+                    <td>{{ order.sale_date }}</td>
+                    <td>{{ order.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <footer>
+            <a href="/">Back to Dashboard</a>
+        </footer>
+    </div>
+</body>
+</html>

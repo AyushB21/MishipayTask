@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Supplier List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for supplier in suppliers %}
+                <tr>
+                    <td>{{ supplier.name }}</td>
+                    <td>{{ supplier.email }}</td>
+                    <td>{{ supplier.phone }}</td>
+                    <td>{{ supplier.address }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <footer>
+            <a href="/">Back to Dashboard</a>
+        </footer>
+    </div>
+</body>
+</html>
